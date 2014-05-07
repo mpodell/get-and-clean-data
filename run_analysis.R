@@ -35,7 +35,13 @@ run_analysis <- function( ) {
   trainData <- read.table(trainFile, colClasses = colClass)
   testData <- read.table(testFile,, colClasses = colClass)
   
-  # 3. Combine test and train data adding column names and activity descriptions to the rows.
+  # 3. Tidy up the column names:
+  myColNames <- sub("\\(","", myColNames)  # remove left bracktes
+  myColNames <- sub("\\)","", myColNames)  # remove right brackets
+  # myColNames <- sub("-","",myColNames)     # leaving dashes in for legibility
+  myColNames <- tolower(myColNames)        # make all lower case
+  
+  # 4. Combine test and train data adding column names and activity descriptions to the rows.
   testDataKeyed <- cbind(testRowKeys, testData)
   testDataKeyed <- cbind(testSub, testDataKeyed)
   trainDataKeyed <- cbind(trainRowKeys, trainData)
@@ -47,12 +53,12 @@ run_analysis <- function( ) {
   names(acombined)[length(names(acombined))] <- "activity"
   acombined <- acombined[, 2:69]   # removes the activity key column 'akey' now redundant with activities column
   
-  # 4. Melt the data frame for easy averaging of variables, cast the data, and return the desired data.frame.
+  # 5. Melt the data frame for easy averaging of variables, cast the data, and return the desired data.frame.
   phoneMelt <- melt(acombined, id = c("activity", "subject"))
   saData <- dcast(phoneMelt, activity + subject ~ variable, mean)
   
   for (i in 3:68) {
-    names(saData)[i] <- paste("AVE_", names(saData)[i], sep="")
+    names(saData)[i] <- paste(names(saData)[i], "-ave", sep="")
   }
   
   return(saData)
