@@ -1,7 +1,7 @@
 CodeBook: Peer Assignment Getting and Cleaning Data
 ========================================================
 
-Coursera course: Getting and Cleaning Data April 25, 2014
+Coursera course: Getting and Cleaning Data May 6, 2014
 
 Data Set: Human Activity Recognition Using Smartphones
 
@@ -141,7 +141,3 @@ For each activity/subject combination, averages of all observations for each of 
 All are numeric variables, each the average of all observations of the original UCI HAR variables for the given activity and subject. Since each observation is normalized to a range of [-1,1], so too the 66 signal variables of the Tidy Data Set fall within the range [-1,1].
 
 The naming convention for the averaged variable names is  the original variable name stripped of parenthases, converted to all lower case, and appended with "-ave".
-
-The Variables in the Tidy Data set:
-The Data:
-The Transformations:

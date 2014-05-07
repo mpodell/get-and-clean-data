@@ -1,7 +1,7 @@
 README
 ========================================================
 
-Coursera course: Getting and Cleaning Data April 25, 2014
+Coursera course: Getting and Cleaning Data May 6, 2014
 
 Data Set: Human Activity Recognition Using Smartphones
 
