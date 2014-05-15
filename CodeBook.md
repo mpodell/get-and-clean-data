@@ -80,6 +80,7 @@ The complete list of original variables calculated for each of the 33 signals is
 
 The complete set of variables that were estimated from these signals are: 
 
+```
 mean(): Mean value
 std(): Standard deviation
 mad(): Median absolute deviation 
@@ -97,6 +98,7 @@ skewness(): skewness of the frequency domain signal
 kurtosis(): kurtosis of the frequency domain signal 
 bandsEnergy(): Energy of a frequency interval within the 64 bins of the FFT of each window.
 angle(): Angle between to vectors.
+```
 
 Finally, these variables were were calculated for multiple observations of 30 volunteer subjects performing 6 activities. Those activities are: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
